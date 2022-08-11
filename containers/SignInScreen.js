@@ -19,6 +19,7 @@ export default function SignInScreen({ setToken }) {
   const [password, setPassword] = useState("pas");
 
   //requette au serveur appe de cette fonction dans onpress de l'ecran signin
+
   const fetchSignIn = async () => {
     console.log(`de fetchSignIn ${password} ${email}`);
     try {
@@ -90,9 +91,10 @@ export default function SignInScreen({ setToken }) {
             style={[styles.button, styles.center]}
             onPress={async () => {
               fetchSignIn;
-              const userToken = token; //"r9GVadnOLBJxySHvgobNj0estURjI5xKHIHVRtPkmwxqOuC56WGiIvdKACrpzDV1-token";
+              // const userToken =
+              //   "r9GVadnOLBJxySHvgobNj0estURjI5xKHIHVRtPkmwxqOuC56WGiIvdKACrpzDV1"; //"r9GVadnOLBJxySHvgobNj0estURjI5xKHIHVRtPkmwxqOuC56WGiIvdKACrpzDV1";
 
-              setToken(userToken);
+              // setToken(userToken);
             }}
           >
             <Text style={styles.textbutton}>Sign in</Text>
