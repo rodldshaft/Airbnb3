@@ -10,17 +10,18 @@ import {
   Image,
   StyleSheet,
 } from "react-native";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 export default function SignUpScreen({ setToken }) {
   const navigation = useNavigation();
-  const [email, setEmail] = useState("gege@airbnb-api.com");
+  const [email, setEmail] = useState("gege@mail-api.com");
   const [password, setPassword] = useState("pas");
   const [description, setDescription] = useState("Your Welcome!");
   const [userName, setUserName] = useState("gege");
   const [confirmPassword, setConfirmPassword] = useState("pas");
   //requette au serveur appe de cette fonction dans onpress de l'ecran signin
+
   const fetchSignUp = async () => {
     console.log(`de fetchSignIn ${password} ${email}`);
     try {
@@ -129,8 +130,8 @@ export default function SignUpScreen({ setToken }) {
             style={[styles.button, styles.center]}
             onPress={async () => {
               fetchSignUp;
-              // const userToken = token;
-              // setToken(userToken);
+              const userToken = token;
+              setToken(userToken);
             }}
           >
             <Text style={styles.textbutton}>Sign up</Text>
@@ -199,12 +200,13 @@ const styles = StyleSheet.create({
     fontSize: 15,
     // lineHeight: 25,
     marginVertical: 10,
+    paddingHorizontal: 10,
   },
   textarea: {
     height: 80,
     borderWidth: 2,
     borderColor: "#F3BBBF",
-    marginVertical: 10,
+    marginVertical: 20,
   },
   button: {
     width: 200,
