@@ -37,7 +37,7 @@ export default function SignInScreen({ setToken }) {
         setToken(response.data.token);
         // console.log(response.data.token);
 
-        // await AsyncStorage.setItem("userToken", response.data.token);
+        // await AsyncStorage.setItem("token", response.data.token);
         // const token = await AsyncStorage.getItem("token");
         // console.log(token);
       }
@@ -91,9 +91,17 @@ export default function SignInScreen({ setToken }) {
             style={[styles.button, styles.center]}
             onPress={async () => {
               fetchSignIn;
-              //const userToken = token; //"r9GVadnOLBJxySHvgobNj0estURjI5xKHIHVRtPkmwxqOuC56WGiIvdKACrpzDV1";
 
-              // setToken(userToken);
+              setToken(
+                await AsyncStorage.setItem(
+                  "token",
+                  "r9GVadnOLBJxySHvgobNj0estURjI5xKHIHVRtPkmwxqOuC56WGiIvdKACrpzDV1"
+                )
+              );
+              console.log(await AsyncStorage.getItem("token"));
+              const userToken = token; //"r9GVadnOLBJxySHvgobNj0estURjI5xKHIHVRtPkmwxqOuC56WGiIvdKACrpzDV1";
+
+              setToken(userToken);
             }}
           >
             <Text style={styles.textbutton}>Sign in</Text>
