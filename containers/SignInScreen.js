@@ -91,8 +91,7 @@ export default function SignInScreen({ setToken }) {
             style={[styles.button, styles.center]}
             onPress={async () => {
               fetchSignIn;
-              // const userToken =
-              //   "r9GVadnOLBJxySHvgobNj0estURjI5xKHIHVRtPkmwxqOuC56WGiIvdKACrpzDV1"; //"r9GVadnOLBJxySHvgobNj0estURjI5xKHIHVRtPkmwxqOuC56WGiIvdKACrpzDV1";
+              //const userToken = token; //"r9GVadnOLBJxySHvgobNj0estURjI5xKHIHVRtPkmwxqOuC56WGiIvdKACrpzDV1";
 
               // setToken(userToken);
             }}
