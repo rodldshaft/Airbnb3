@@ -66,7 +66,6 @@ export default function App() {
         ) : (
           // User is signed in ! 🎉
           <Stack.Screen name="Tab" options={{ headerShown: false }}>
-            options={{ headerShown: false }}
             {() => (
               <Tab.Navigator
                 screenOptions={{

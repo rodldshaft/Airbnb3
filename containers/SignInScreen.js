@@ -35,7 +35,7 @@ export default function SignInScreen({ setToken }) {
         console.log("token");
 
         setToken(response.data.token);
-        // console.log(response.data.token);
+        console.log(response.data.token);
 
         // await AsyncStorage.setItem("token", response.data.token);
         // const token = await AsyncStorage.getItem("token");
@@ -92,16 +92,10 @@ export default function SignInScreen({ setToken }) {
             onPress={async () => {
               fetchSignIn;
 
-              setToken(
-                await AsyncStorage.setItem(
-                  "token",
-                  "r9GVadnOLBJxySHvgobNj0estURjI5xKHIHVRtPkmwxqOuC56WGiIvdKACrpzDV1"
-                )
-              );
-              console.log(await AsyncStorage.getItem("token"));
-              const userToken = token; //"r9GVadnOLBJxySHvgobNj0estURjI5xKHIHVRtPkmwxqOuC56WGiIvdKACrpzDV1";
+              // console.log(await AsyncStorage.getItem("token"));
+              // const userToken = token; //"r9GVadnOLBJxySHvgobNj0estURjI5xKHIHVRtPkmwxqOuC56WGiIvdKACrpzDV1";
 
-              setToken(userToken);
+              // setToken(userToken);
             }}
           >
             <Text style={styles.textbutton}>Sign in</Text>

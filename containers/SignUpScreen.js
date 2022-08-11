@@ -4,7 +4,6 @@ import {
   Button,
   Text,
   TextInput,
-  Textarea,
   View,
   TouchableOpacity,
   Image,
@@ -36,9 +35,10 @@ export default function SignUpScreen({ setToken }) {
       );
 
       if (response.data.token) {
-        console.log("token");
+        console.log(response.data);
 
         setToken(response.data.token);
+        alert("Inscription réussie");
         // console.log(response.data.token);
 
         // await AsyncStorage.setItem("userToken", response.data.token);
@@ -46,7 +46,7 @@ export default function SignUpScreen({ setToken }) {
         // console.log(token);
       }
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data);
     }
   };
 
@@ -78,7 +78,7 @@ export default function SignUpScreen({ setToken }) {
               name="username"
               style={styles.textinput}
               placeholder="username"
-              value={userName} //"nono@airbnb-api.com"
+              value={userName}
               onChangeText={(setusername) => {
                 console.log(setusername);
                 setUserName(setusername);
@@ -90,10 +90,10 @@ export default function SignUpScreen({ setToken }) {
               name="description"
               style={styles.textinputarea}
               placeholder="Describe yourself in a few words..."
-              value={description} //"nono@airbnb-api.com"
+              value={description}
               onChangeText={(settext) => {
                 console.log(settext);
-                setdescription(settext);
+                setDescription(settext);
               }}
             />
           </View>
@@ -130,8 +130,6 @@ export default function SignUpScreen({ setToken }) {
             style={[styles.button, styles.center]}
             onPress={async () => {
               fetchSignUp;
-              const userToken = token;
-              setToken(userToken);
             }}
           >
             <Text style={styles.textbutton}>Sign up</Text>
@@ -139,10 +137,12 @@ export default function SignUpScreen({ setToken }) {
 
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate("SignUp");
+              navigation.navigate("SignIn");
             }}
           >
-            <Text style={styles.textbutton2}>No account ? Register</Text>
+            <Text style={styles.textbutton2}>
+              Alreadey have an account ? Sign in
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
