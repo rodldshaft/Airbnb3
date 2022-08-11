@@ -46,7 +46,7 @@ export default function HomeScreen() {
       try {
         const fetchLease = async () => {
           const response = await axios.get(
-            " https://express-airbnb-api.herokuapp.com/rooms"
+            "https://express-airbnb-api.herokuapp.com/rooms"
           );
           setLease(response.data);
           setLeaseIsLoading(false);

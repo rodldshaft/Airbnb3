@@ -16,7 +16,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 export default function SignInScreen({ setToken }) {
   const navigation = useNavigation();
   const [email, setEmail] = useState("nono@airbnb-api.com");
-  const [password, setPassword] = useState("pas");
+  const [password, setPassword] = useState("pass");
 
   //requette au serveur appe de cette fonction dans onpress de l'ecran signin
 
